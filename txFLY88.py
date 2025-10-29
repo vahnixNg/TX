@@ -7,13 +7,15 @@ import random # Thêm random để điều chỉnh độ tin cậy và lời khu
 # --- TRUNG TÂM ĐIỀU KHIỂN CỦA BẠN (3 Ổ KHOÁ) ---
 
 # Ổ KHOÁ 1: Chìa khoá Bot
-BOT_TOKEN = "8380092974:AAH5szL1AEXwf4tWQhUxZG9qKwmcGsKSb_U" # Dán token của bạn vào đây
+import os 
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
 # Ổ KHOÁ 2: ID Admin của bạn
-ADMIN_ID = 8356373953 # Thay bằng ID Admin của BẠN
+ADMIN_ID = int(os.environ.get('ADMIN_ID', '8356373953')) # Thêm giá trị mặc định phòng lỗi
+
 
 # Ổ KHOÁ 3: Username Admin của bạn (để gà liên hệ)
-ADMIN_USERNAME = "@namsky88" # Ví dụ: "@CSN_NhaTrong"
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', '@namsky88') # Thêm giá trị mặc định phòng lỗi
 
 # --- CƠ SỞ DỮ LIỆU CỦA PHỄU ---
 
@@ -228,4 +230,5 @@ Kết quả có độ chính xác cao.
 # --- CHẠY BOT ---
 if __name__ == "__main__":
     print("🚀 Bot Tài Xỉu V5.3 (Cố Vấn TX) đang chạy...")
+
     bot.polling(none_stop=True)
